@@ -1,0 +1,63 @@
+GTS 8-R1(O-Q)运行步骤
+1.打开终端,cd进入工具路径
+2.输入:
+
+export PATH=/usr/local/jdk-11.0.1/bin:/usr/local/jdk-11.0.1/jre/bin:$PATH
+export PATH=/usr/local/jdk-9.0.4/bin:/usr/local/jdk-9.0.4/jre/bin:$PATH
+
+3.配置APE_API_KEY
+4../gts-tradefed进入工具
+
+jdk是局部切换的,其他工具的使用不受影响.
+要查看jdk版本号,输入 java -version
+
+gts-tradefed> run gts --conditional-business-logic-tests-enabled
+
+2.  Run test case
+run gts --skip-device-info -m GtsPlacementTestCases --conditional-business-logic-tests-enabled -t com.google.android.placement.gts.DefaultIntentTest#testDefaultIntentHandlers
+
+
+1. SD card Method( SD卡模式):
+
+adb push gts test wvmedia /sdcard/
+
+开始运行:
+
+run gts --module-arg GtsExoPlayerTestCases:config-url:https://storage.googleapis.com/exoplayer-test-media-1/gen-4/dynamic-config-sdcard-1.0.json --module-arg "GtsMediaTestCases:instrumentation-arg:mediapath:=file:///sdcard/wvmedia" -s 
+
+2. 本地服务器测试:
+
+run gts --module-arg GtsExoPlayerTestCases:config-url:http://ctstest.wingtech.com/CTS/gts/exoplayer/dynamic-config-1.0.json --precondition-arg skip-media-download --module-arg GtsYouTubeTestCases:config-url:http://ctstest.wingtech.com/CTS/dynamic-config-1.0.json --module-arg "GtsMediaTestCases:instrumentation-arg:media-path:=http://ctstest.wingtech.com/CTS/wvmedia"
+本地服务器跑完后 GtsMediaTestCases 有fail项无法retry
+
+3.APE_API_KEY
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-lenovo.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-asus.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-meizu.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-harman-public.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-huawei.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-xiaomi.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-tcl.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-moto.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-oppo.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-fih-public.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-nokia-hmd.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-wingtech.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-samsung.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-htc.json'
+
+export APE_API_KEY='/home/wingtech/tool/gts/key.json/gts-oneplus.json'
