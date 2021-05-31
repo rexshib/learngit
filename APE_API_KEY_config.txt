@@ -1,4 +1,5 @@
 GTS 8-R1(O-Q)运行步骤
+Creating a new branch is quick AND simple.
 222222
 111111
 1.打开终端,cd进入工具路径
