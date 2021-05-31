@@ -1,6 +1,8 @@
 GTS 8-R1(O-Q)运行步骤
+111111
 1.打开终端,cd进入工具路径
 2.输入:
+Git has a mutable index called stage.
 
 export PATH=/usr/local/jdk-11.0.1/bin:/usr/local/jdk-11.0.1/jre/bin:$PATH
 export PATH=/usr/local/jdk-9.0.4/bin:/usr/local/jdk-9.0.4/jre/bin:$PATH
