@@ -1,5 +1,8 @@
 GTS 8-R1(O-Q)运行步骤
+<<<<<<< HEAD
 444444
+=======
+>>>>>>> 4da2c75... merge
 33333
 Creating a new branch is quick and simple.
 222222
